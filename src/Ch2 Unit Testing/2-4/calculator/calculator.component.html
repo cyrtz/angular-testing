@@ -1,0 +1,10 @@
+<h1>計算機</h1>
+<div>
+  <input type="number" [(ngModel)]="firstNumber" placeholder="First Number" class="first-number">
+  <select [(ngModel)]="operator" class="operator">
+    <option *ngFor="let op of operators" [value]="op.value">{{ op.label }}</option>
+  </select>
+  <input type="number" [(ngModel)]="secondNumber" placeholder="Second Number" class="second-number">
+  <button (click)="calculate()" class="calculate">Calculate</button>
+  <p class="result">{{ result }}</p>
+</div>
