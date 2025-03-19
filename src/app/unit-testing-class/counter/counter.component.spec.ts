@@ -17,7 +17,23 @@ describe('CounterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  // 當increment()被呼叫時，count應該+1
+  // xit('should ', () => {
+  //   component.increment();
+  //   expect(component.count).toBe(1);
+  // });
+
+  // // 當decrement()被呼叫時，count應該-1
+  // xit('should decrement the count by 1', () => {
+  //   component.decrement();
+  //   expect(component.count).toBe(-1);
+  // });
+
+  // 模擬使用者點擊+按鈕
+  it('should increment the count by 1 when the increment button is clicked', () => {
+    const button = fixture.nativeElement.querySelector('button.increment');
+    button.click();
+    fixture.detectChanges();
+    expect(component.count).toBe(1);
   });
 });
