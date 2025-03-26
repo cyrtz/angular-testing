@@ -1,0 +1,10 @@
+<div *ngIf="data?.products?.length; else noDataPrompt" data-test-id="image-list">
+  <app-image-item
+    *ngFor="let product of data.products"
+    [title]="product.title"
+    [image]="product.images[0]"
+  ></app-image-item>
+</div>
+<ng-template #noDataPrompt>
+  <div data-test-id="no-data-prompt"> No data to display.</div>
+</ng-template>
