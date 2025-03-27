@@ -1,0 +1,6 @@
+<div *ngIf="images.length > 0; else noData">
+  <app-image-item *ngFor="let image of images" [title]="image.title" [image]="image.images[0]"></app-image-item>
+</div>
+<ng-template #noData>
+  <div data-test-id="no-data-prompt">No data to display.</div>
+</ng-template>
