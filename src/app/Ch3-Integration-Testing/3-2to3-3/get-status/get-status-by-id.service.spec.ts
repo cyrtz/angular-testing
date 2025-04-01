@@ -28,5 +28,14 @@ describe('GetStatusByIdService', () => {
     expect(result).toBe('active');
   });
 
+  it('should return inactive status when get element id 2', () => {
+    spyOn(filterService, 'filterList').and.callFake((list, id) => mockList.find(item => item.id === id));
+
+    const id = 2;
+    const result = service.getStatusById(mockList, id);
+
+    expect(result).toBe('inactive');
+    expect(filterService.filterList).toHaveBeenCalledTimes(1);
+  });
 
 });
