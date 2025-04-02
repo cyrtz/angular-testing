@@ -18,7 +18,7 @@ describe('ImageListAxiosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should render correct image items when data is available', async () => {
+  it('should fetch and render mocked data correctly', async () => {
     const mockedData = {
       products: [
         {
@@ -42,8 +42,9 @@ describe('ImageListAxiosComponent', () => {
       config: { url: 'https://dummyjson.com/products' },
     };
 
-    // spyOn(axios, 'get').and.returnValue(Promise.resolve(mockResponse));
+    spyOn(axios, 'get').and.returnValue(Promise.resolve(mockResponse as any));
 
+    await component.ngOnInit();
     fixture.detectChanges();
 
     const imageItems = fixture.nativeElement.querySelectorAll('app-image-item');
