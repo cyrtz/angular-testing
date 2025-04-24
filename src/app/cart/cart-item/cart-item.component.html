@@ -1,0 +1,12 @@
+<div class="cart-item">
+  <div>
+    <h2>{{item.name}}</h2>
+    <p>價格: {{item.price}}</p>
+  </div>
+  <div class="cart-actions">
+    <button test-id="decrease" (click)="decrease()">-</button>
+    {{item.quantity}}
+    <button test-id="increase" (click)="increase()">+</button>
+    <button test-id="remove" (click)="remove.emit()">刪除</button>
+  </div>
+</div>

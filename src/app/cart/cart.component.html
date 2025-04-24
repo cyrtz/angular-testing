@@ -1,0 +1,8 @@
+<h1 class="cart-title">我的購物車</h1>
+
+<app-cart-item *ngFor="let item of cart; let i = index" [item]="item" (remove)="removeItem(i)"
+  (quantityChange)="updateQuantity(i, $event)"></app-cart-item>
+
+<h4 test-id="total">
+  總金額：{{ total() }} 元
+</h4>
